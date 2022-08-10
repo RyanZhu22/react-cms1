@@ -58,7 +58,7 @@ export default function Edit() {
     }
     editor.create()
 
-    // 根据地址栏id做请求 make a request accoring to address bar
+    // make a request accoring to address bar
     if (params.id) {
       ArticleSearchApi({ id: params.id }).then(res => {
         if (res.errCode === 0) {
@@ -71,7 +71,6 @@ export default function Edit() {
 
     return () => {
       // Destroy the editor when the component is destroyed
-      // NOTE：The class  needs to be called in componentWillUnmount
       editor.destroy()
     }
   }, [location.pathname])
